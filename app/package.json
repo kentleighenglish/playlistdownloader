@@ -1,0 +1,9 @@
+{
+  "name": "Feedo",
+  "version": "0.1.0",
+  "main": "app.js",
+  "dependencies": [],
+  "devDependencies": {
+    "shelljs": "~0.7.5"
+  }
+}

@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<script>
+			const { ipcRenderer, remote } = require('electron');
+			const db = remote.getGlobal('datastore');
+			const feedUtility = remote.getGlobal('feedUtility');
+			const xmlParser = remote.getGlobal('xmlParser');
+			const trackRetreiver = remote.getGlobal('trackRetriever');
+			const globalConfig = remote.getGlobal('config');
+
+			//Event Emitter Handler
+			const EventEmitter = remote.getGlobal('EventEmitter');
+
+			ipcRenderer.on('app-quit', () => {
+				EventEmitter.dispatch('removeNew');
+			});
+		</script>
+		<!-- 3rd Party Libraries -->
+		<script type="text/javascript" src="../libs/moment.min.js"></script>
+
+		<script type="text/javascript" src="../res/js/main.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+	</head>
+	<body>
+		<div id="container"></div>
+	</body>
+	<!-- React Load -->
+	<script type="text/javascript" src="../libs/react.js"></script>
+	<script type="text/javascript" src="../libs/react-dom.js"></script>
+	<script type="text/javascript">require('../res/js/app-react')</script>
+</html>

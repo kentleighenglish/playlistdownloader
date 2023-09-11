@@ -1,0 +1,7 @@
+.hg/
+.hgignore
+
+app/datastores/*
+app/downloads/*
+node_modules/
+
